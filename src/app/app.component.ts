@@ -23,9 +23,4 @@ export class AppComponent {
       map(result => result.matches),
       shareReplay()
     );
-
-    prueba(){
-      //this.pokeapi.getPokemon('https://pokeapi.co/api/v2/pokemon/1/').subscribe((response)=>{console.log(response)});
-      this.pokeapi.getPokemonList(0).subscribe((response)=>{console.log(response)});
-    }
 }

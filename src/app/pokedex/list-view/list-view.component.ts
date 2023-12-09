@@ -8,16 +8,18 @@ import { PokeapiService, PokemonCard } from '../services/pokeapi.service';
 })
 export class ListViewComponent {
 
-  pokemonList:PokemonCard[] = [];
+  pokemonList: PokemonCard[] = [];
   offset = 0;
 
   constructor(private pokeapi: PokeapiService) {};
 
   ngOnInit(): void {
-    this.getPage();
+    this.getPage(0);
   }
 
-  getPage() {
+  getPage(move: number) {
+    this.offset += move;
+    console.log(this.offset);
     this.pokeapi.getPokemonList(this.offset).subscribe((result:PokemonCard[]) => {
       this.pokemonList = result;
     });

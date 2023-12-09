@@ -6,6 +6,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { CardViewComponent } from './list-view/card-view/card-view.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
+import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 
 export const routes: Routes = [
   {
@@ -29,6 +31,8 @@ export const routes: Routes = [
     RouterModule.forChild(routes),
     MatInputModule,
     MatCardModule,
+    MatIconModule,
+    NgxSkeletonLoaderModule.forRoot({ animation: 'pulse', loadingText: 'This item is actually loading...' }),
   ]
 })
 export class PokedexModule { }

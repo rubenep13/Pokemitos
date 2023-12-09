@@ -8,6 +8,8 @@ import { PokemonCard } from '../../services/pokeapi.service';
 })
 export class CardViewComponent {
 
-  //@Input() pokemonCard : PokemonCard;
+  @Input() pokemonCard!: PokemonCard;
+
+
 
 }

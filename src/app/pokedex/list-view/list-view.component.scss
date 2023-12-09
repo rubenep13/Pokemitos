@@ -1,8 +1,16 @@
 .card-container{
       display: flex;
       margin-right: 10px;
+      margin-bottom: 50px;
 }
 
 .card{
       white-space: nowrap;
+}
+
+.container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
