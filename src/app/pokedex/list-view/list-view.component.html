@@ -1,1 +1,9 @@
-<app-card-view></app-card-view>
+<form class="example-form">
+        <mat-form-field class="example-full-width">
+                <mat-label>Search Pokémon...</mat-label>
+                <input matInput placeholder="Charmander">
+        </mat-form-field>
+</form>
+<div *ngFor="let pokemon of pokemonList" class="card-container">
+        <app-card-view class="card" [pokemonCard]="pokemon"></app-card-view>
+</div>

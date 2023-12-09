@@ -42,7 +42,7 @@ export class PokeapiService {
 
 }
 
-interface PokemonCard {
+export interface PokemonCard {
   id: number,
   name: string,
   stats: any,

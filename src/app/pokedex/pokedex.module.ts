@@ -4,6 +4,8 @@ import { ListViewComponent } from './list-view/list-view.component';
 import { PokedexComponent } from './pokedex.component';
 import { RouterModule, Routes } from '@angular/router';
 import { CardViewComponent } from './list-view/card-view/card-view.component';
+import { MatInputModule } from '@angular/material/input';
+import { MatCardModule } from '@angular/material/card';
 
 export const routes: Routes = [
   {
@@ -25,6 +27,8 @@ export const routes: Routes = [
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
+    MatInputModule,
+    MatCardModule,
   ]
 })
 export class PokedexModule { }
