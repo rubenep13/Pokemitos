@@ -2,9 +2,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ListViewComponent } from './list-view/list-view.component';
 import { PokedexComponent } from './pokedex.component';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 
-export const routes = [
+export const routes: Routes = [
   {
     path: '',
     component: PokedexComponent,

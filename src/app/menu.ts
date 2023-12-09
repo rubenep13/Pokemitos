@@ -13,11 +13,11 @@ export const menuItems: MenuItem[] = [
   {
     name: 'Team creator',
     icon: 'book',
-    href: 'pokedex'
+    href: 'team'
   },
   {
     name: 'Combats',
     icon: 'book',
-    href: 'pokedex'
+    href: 'combats'
   },
 ];
