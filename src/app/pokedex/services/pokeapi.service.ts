@@ -39,6 +39,67 @@ export class PokeapiService {
     );
   }
 
+  getPokemonByName(name: string): Observable<PokemonCard>{
+    return this.http.get('https://pokeapi.co/api/v2/pokemon/' + name).pipe(
+      // Manipula los datos
+      map((pokemon: any) => {
+        return {
+          id: pokemon.id,
+          name: pokemon.name,
+          stats: pokemon.stats,
+          types: pokemon.types,
+          sprite: pokemon.sprites.other!['official-artwork'].front_default
+        }
+      })
+    );
+  }
+
+  getPokemonByType(type: string): Observable<PokemonCard[]>{
+    return this.http.get('https://pokeapi.co/api/v2/type/' + type).pipe(
+      // Manipula los datos
+      map((response: any) => {
+        let pokemons: PokemonCard[] = [];
+        response.pokemon.forEach((pokemon_item: any) => {
+          this.getPokemon(pokemon_item.pokemon.url).subscribe((pokemon: PokemonCard) => {
+            pokemons.push(pokemon);
+          })
+        });
+        return pokemons;
+      })
+    );
+  }
+
+  getPokemonByAbility(ability: string): Observable<PokemonCard[]>{
+    return this.http.get('https://pokeapi.co/api/v2/ability/' + ability).pipe(
+      // Manipula los datos
+      map((response: any) => {
+        let pokemons: PokemonCard[] = [];
+        response.pokemon.forEach((pokemon_item: any) => {
+          this.getPokemon(pokemon_item.pokemon.url).subscribe((pokemon: PokemonCard) => {
+            pokemons.push(pokemon);
+          })
+        });
+        return pokemons;
+      })
+    );
+  }
+
+  getPokemonByMove(move: string): Observable<PokemonCard[]>{
+    return this.http.get('https://pokeapi.co/api/v2/move/' + move).pipe(
+      // Manipula los datos
+      map((response: any) => {
+        let pokemons: PokemonCard[] = [];
+        response.pokemon.forEach((pokemon_item: any) => {
+          this.getPokemon(pokemon_item.pokemon.url).subscribe((pokemon: PokemonCard) => {
+            pokemons.push(pokemon);
+          })
+        });
+        return pokemons;
+      })
+    );
+  }
+
+
 
 }
 

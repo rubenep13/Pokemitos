@@ -5,6 +5,7 @@ import { map, shareReplay } from 'rxjs/operators';
 import { AsyncPipe, NgIf } from '@angular/common';
 import { menuItems } from './menu';
 import { PokeapiService } from './pokedex/services/pokeapi.service';
+import { OverlayContainer } from '@angular/cdk/overlay';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +14,9 @@ import { PokeapiService } from './pokedex/services/pokeapi.service';
 })
 export class AppComponent {
 
-  constructor(private pokeapi: PokeapiService) {}
+  darkTheme = false;
+
+  constructor(private overlayContainer: OverlayContainer) {}
 
   private breakpointObserver = inject(BreakpointObserver);
   elements = menuItems;
@@ -23,4 +26,17 @@ export class AppComponent {
       map(result => result.matches),
       shareReplay()
     );
+
+  toggleTheme() {
+    this.darkTheme = !this.darkTheme;
+    const overlayContainerClasses = this.overlayContainer.getContainerElement().classList;
+    const themeWrapperClassList = document.getElementsByClassName('theme-wrapper')[0].classList;
+    if (this.darkTheme) {
+      overlayContainerClasses.add('dark-theme');
+      themeWrapperClassList.add('dark-theme');
+    } else {
+      overlayContainerClasses.remove('dark-theme');
+      themeWrapperClassList.remove('dark-theme');
+    }
+  }
 }

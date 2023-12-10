@@ -1,4 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+@import './styles/themes.scss';
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+// Generate dark and light themes having material installed
+:root {
+  --primary-color: #000;
+  --secondary-color: #fff;
+}
+
+body {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+.dark-theme {
+  --primary-color: #fff;
+  --secondary-color: #000;
+}

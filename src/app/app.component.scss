@@ -1,3 +1,10 @@
 .right-icon{
         margin-left: auto;
 }
+
+//esta clase end esta dentro de un div con display flex y justify-content sin definir, como hago que este elemento se posicione a la derecha?
+//segun google el justify-self no funciona porque no es un elemento grid, pero no se como hacerlo con flex
+
+.end {
+  margin-left: auto;
+}

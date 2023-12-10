@@ -1,0 +1,26 @@
+@import '@angular/material/theming';
+
+// Incluye la función 'mat-core' que incluye estilos comunes como 'normalize.css'.
+@include mat-core();
+
+// Define los colores que usarás en tu tema.
+$my-app-primary: mat-palette($mat-indigo);
+$my-app-accent:  mat-palette($mat-pink, A200, A100, A400);
+
+// Crea el tema claro.
+$my-app-theme: mat-light-theme($my-app-primary, $my-app-accent);
+
+// Incluye todos los estilos del tema.
+@include angular-material-theme($my-app-theme);
+
+// Define los colores para el tema oscuro.
+$my-app-dark-primary: mat-palette($mat-blue-grey);
+$my-app-dark-accent: mat-palette($mat-amber, A200, A100, A400);
+
+// Crea el tema oscuro.
+$my-app-dark-theme: mat-dark-theme($my-app-dark-primary, $my-app-dark-accent);
+
+// Crea una clase para el tema oscuro.
+.dark-theme {
+  @include angular-material-theme($my-app-dark-theme);
+}
