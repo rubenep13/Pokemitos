@@ -22,6 +22,8 @@ export class ListViewComponent {
     console.log(this.offset);
     this.pokeapi.getPokemonList(this.offset).subscribe((result:PokemonCard[]) => {
       this.pokemonList = result;
+      console.log(result);
+      this.pokemonList = this.pokemonList.sort((a, b) => (a.id < b.id ? -1 : 1));
     });
   }
 

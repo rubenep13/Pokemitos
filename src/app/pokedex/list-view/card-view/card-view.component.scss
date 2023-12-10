@@ -32,15 +32,15 @@
   background-color: #d56723;
 }
 .flying {
-  background: linear-gradient(180deg, #3dc7ef 50%, #bdb9b8 50%);
+  //background: linear-gradient(180deg, #3dc7ef 50%, #bdb9b8 50%);
   background-color: #3dc7ef;
 }
 .poison {
   background-color: #b97fc9;
 }
 .ground {
-  background: linear-gradient(180deg, #f7de3f 50%, #ab9842 50%);
-  background-color: #f7de3f;
+  //background: linear-gradient(180deg, #f7de3f 50%, #ab9842 50%);
+  background-color: #c59232;
 }
 .rock {
   background-color: #a38c21;
@@ -83,3 +83,165 @@
   background-color: #fdb9e9;
 }
 
+//PRUEBAS CARD
+.perspective {
+  width: 100%;
+  perspective: 1000px;
+}
+
+#item {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+
+.card {
+  width: 270px;
+  height: 413px;
+  margin: auto;
+  box-shadow: 0 1rem 1rem 1rem #4948486b;
+  transform-style: preserve-3d;
+  border-radius: 1rem;
+  transition: transform 0.2s ease !important;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+}
+.card:hover{
+  transform: scale(1.05);
+}
+.card .image {
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+  border-radius: 15px;
+}
+.card .image:after {
+  background: inherit;
+  content: "";
+  display: block;
+  position: absolute;
+  left: -60px;
+  top: 40px;
+  width: 100%;
+  height: 108%;
+  z-index: -1;
+  filter: blur(5rem);
+}
+.card h2 {
+  position: absolute;
+  top: 0;
+  left: -30px;
+  font-size: 2.5rem;
+  font-weight: 400;
+  transform: translateZ(80px);
+  text-transform: uppercase;
+  color: #000000;
+}
+.card span {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  font-size: 2.2rem;
+  font-weight: 400;
+  transform: translateZ(35px);
+  text-transform: uppercase;
+  color: #000000;
+  display: flex;
+  gap: 5px;
+}
+.card span strong {
+  font-weight: 600;
+}
+
+img {
+  margin: auto;
+  display: block;
+  border-radius: 1rem;
+}
+
+.typeImg{
+  width: 4rem;
+  filter: drop-shadow(0.2rem 0.2rem 0.4rem rgba(0, 0, 0, 0.5));
+}
+
+.span_id{
+  position: absolute;
+  bottom: 2rem !important;
+  left: 2rem;
+}
+
+.stats{
+  position: absolute;
+  bottom: 5.5rem !important;
+  left: 1.5rem;
+  font-size: 1.25rem !important;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.statName{
+  font-size: 1rem !important;
+}
+/*
+.normal:hover {
+  background-color: #a4acaf;
+ }
+.fighting:hover {
+  background-color: #d56723;
+}
+.flying:hover {
+  background: linear-gradient(180deg, #3dc7ef 50%, #bdb9b8 50%);
+  background-color: #3dc7ef;
+}
+.poison:hover {
+  background-color: #b97fc9;
+}
+.ground:hover {
+  background: linear-gradient(180deg, #f7de3f 50%, #ab9842 50%);
+  background-color: #f7de3f;
+}
+.rock:hover {
+  background-color: #a38c21;
+}
+.bug:hover {
+  background-color: #729f3f;
+}
+.ghost:hover {
+  background-color: #7b62a3;
+}
+.steel:hover {
+  background-color: #9eb7b8;
+}
+.fire:hover {
+  background-color: #fd7d24;
+}
+.water:hover {
+  background-color: #4592c4;
+}
+.grass:hover {
+  background-color: #9bcc50;
+}
+.electric:hover {
+  background-color: #eed535;
+}
+.psychic:hover {
+  background-color: #f366b9;
+}
+.ice:hover {
+  background-color: #51c4e7;
+}
+.dragon:hover {
+  background: linear-gradient(180deg, #53a4cf 50%, #f16e57 50%);
+  background-color: #53a4cf;
+}
+.dark:hover {
+  background-color: #707070;
+}
+.fairy:hover {
+  background-color: #fdb9e9;
+}*/
